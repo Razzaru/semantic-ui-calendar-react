@@ -9,6 +9,7 @@ import BaseCalendarView, {
 import Calendar from './Calendar';
 import Body from './CalendarBody/Body';
 import Header from './CalendarHeader/Header';
+import Footer from './CalendarFooter/Footer';
 
 import { findHTMLElement } from '../lib';
 
@@ -66,7 +67,11 @@ class DayView extends BaseCalendarView<DayViewProps, any> {
           active={activeItemIndex}
           disabled={disabledItemIndexes}
           marked={markedItemIndexes}
-          markColor={markColor} />
+          markColor={markColor}
+        />
+        <Footer
+          onCellClick={onValueClick}
+        />
       </Calendar>
     );
   }
