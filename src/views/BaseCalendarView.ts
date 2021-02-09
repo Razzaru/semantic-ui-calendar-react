@@ -24,6 +24,8 @@ export interface BaseCalendarViewProps {
   markColor?: SemanticCOLORS;
   /** Moment date localization */
   localization?: string;
+  /** Should show footer */
+  showFooter?: boolean;
 }
 
 export interface SingleSelectionCalendarViewProps {

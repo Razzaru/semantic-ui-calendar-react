@@ -48,6 +48,8 @@ export interface BaseInputProps {
     localization?: string;
     /** Try to prevent mobile keyboard appearing. */
     hideMobileKeyboard?: boolean;
+    /** Should show footer. */
+    showFooter?: boolean;
 }
 export declare const BaseInputPropTypes: {
     /** Currently selected value. */

@@ -59,6 +59,7 @@ export interface BasePickerProps {
   tabIndex?: string;
   pickerWidth?: string;
   pickerStyle?: object;
+  showFooter?: boolean;
 }
 
 export interface OptionalHeaderProps {

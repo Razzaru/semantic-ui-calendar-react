@@ -24,6 +24,7 @@ declare class DateInput extends BaseInput<DateInputProps, DateInputState> {
         startMode: string;
         preserveViewMode: boolean;
         icon: string;
+        showFooter: boolean;
         inline: boolean;
         localization: string;
     };

@@ -69,6 +69,8 @@ export interface BaseInputProps {
   localization?: string;
   /** Try to prevent mobile keyboard appearing. */
   hideMobileKeyboard?: boolean;
+  /** Should show footer. */
+  showFooter?: boolean;
 }
 
 export const BaseInputPropTypes = {

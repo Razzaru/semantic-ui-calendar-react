@@ -92,7 +92,7 @@ var DateInput = /** @class */ (function (_super) {
             }
         };
         _this.getPicker = function () {
-            var _a = _this.props, value = _a.value, initialDate = _a.initialDate, dateFormat = _a.dateFormat, disable = _a.disable, minDate = _a.minDate, maxDate = _a.maxDate, enable = _a.enable, inline = _a.inline, marked = _a.marked, markColor = _a.markColor, localization = _a.localization, tabIndex = _a.tabIndex, pickerWidth = _a.pickerWidth, pickerStyle = _a.pickerStyle;
+            var _a = _this.props, value = _a.value, initialDate = _a.initialDate, dateFormat = _a.dateFormat, disable = _a.disable, minDate = _a.minDate, maxDate = _a.maxDate, enable = _a.enable, inline = _a.inline, marked = _a.marked, markColor = _a.markColor, localization = _a.localization, tabIndex = _a.tabIndex, pickerWidth = _a.pickerWidth, pickerStyle = _a.pickerStyle, showFooter = _a.showFooter;
             var pickerProps = {
                 isPickerInFocus: _this.isPickerInFocus,
                 isTriggerInFocus: _this.isTriggerInFocus,
@@ -110,6 +110,7 @@ var DateInput = /** @class */ (function (_super) {
                 minDate: parse_1.parseValue(minDate, dateFormat, localization),
                 maxDate: parse_1.parseValue(maxDate, dateFormat, localization),
                 localization: localization,
+                showFooter: showFooter,
             };
             var disableParsed = parse_1.parseArrayOrValue(disable, dateFormat, localization);
             var markedParsed = parse_1.parseArrayOrValue(marked, dateFormat, localization);
@@ -208,7 +209,7 @@ var DateInput = /** @class */ (function (_super) {
      *  - parse input value
      *  - handle underlying picker change
      */
-    DateInput.defaultProps = __assign({}, BaseInput_1.default.defaultProps, { dateFormat: 'DD-MM-YYYY', startMode: 'day', preserveViewMode: true, icon: 'calendar' });
+    DateInput.defaultProps = __assign({}, BaseInput_1.default.defaultProps, { dateFormat: 'DD-MM-YYYY', startMode: 'day', preserveViewMode: true, icon: 'calendar', showFooter: false });
     DateInput.propTypes = __assign({}, BaseInput_1.BaseInputPropTypes, BaseInput_1.DateRelatedPropTypes, BaseInput_1.MultimodePropTypes, BaseInput_1.DisableValuesPropTypes, BaseInput_1.EnableValuesPropTypes, BaseInput_1.MarkedValuesPropTypes, BaseInput_1.MinMaxValuePropTypes, {
         /** Display mode to start. */
         startMode: PropTypes.oneOf(['year', 'month', 'day']),

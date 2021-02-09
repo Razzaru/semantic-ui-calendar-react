@@ -69,6 +69,7 @@ class DayPicker
       marked,
       markColor,
       localization,
+      showFooter,
       ...rest
     } = this.props;
 
@@ -91,7 +92,9 @@ class DayPicker
         activeItemIndex={this.getActiveCellPosition()}
         markedItemIndexes={this.getMarkedPositions()}
         markColor={markColor}
-        localization={localization} />
+        localization={localization}
+        showFooter={showFooter}
+      />
     );
   }
 

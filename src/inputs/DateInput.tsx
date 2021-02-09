@@ -99,6 +99,7 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
     startMode: 'day',
     preserveViewMode: true,
     icon: 'calendar',
+    showFooter: false,
   };
 
   public static readonly propTypes = {
@@ -208,6 +209,7 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
       tabIndex,
       pickerWidth,
       pickerStyle,
+      showFooter,
     } = this.props;
     const pickerProps = {
       isPickerInFocus: this.isPickerInFocus,
@@ -226,6 +228,7 @@ class DateInput extends BaseInput<DateInputProps, DateInputState> {
       minDate: parseValue(minDate, dateFormat, localization),
       maxDate: parseValue(maxDate, dateFormat, localization),
       localization,
+      showFooter,
     };
     const disableParsed = parseArrayOrValue(disable, dateFormat, localization);
     const markedParsed = parseArrayOrValue(marked, dateFormat, localization);
