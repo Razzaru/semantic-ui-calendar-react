@@ -10,8 +10,9 @@ const emptySellStyle = {
 
 const Footer = ({ onCellClick, setDate }) => {
   const onLocalCellClick = (event, itemPosition) => {
-    setDate(moment.utc());
-    onCellClick(event, { value: itemPosition.toString() });
+    setDate(moment.utc(), () => {
+      onCellClick(event, { value: itemPosition.toString() });
+    });
   }
 
   return (

@@ -28,7 +28,7 @@ export interface BaseCalendarViewProps {
   /** Should show footer */
   showFooter?: boolean;
   /** Sets month and year */
-  setDate?: (date: Moment) => void
+  setDate?: (date: Moment, callback: () => void) => void
 }
 
 export interface SingleSelectionCalendarViewProps {

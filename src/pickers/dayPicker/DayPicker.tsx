@@ -91,7 +91,7 @@ class DayPicker
         disabledItemIndexes={this.getDisabledPositions()}
         activeItemIndex={this.getActiveCellPosition()}
         markedItemIndexes={this.getMarkedPositions()}
-        setDate={date => this.setState({ date })}
+        setDate={(date, callback) => this.setState({ date }, callback)}
         markColor={markColor}
         localization={localization}
         showFooter={showFooter}
