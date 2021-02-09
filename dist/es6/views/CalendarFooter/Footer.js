@@ -8,8 +8,9 @@ var emptySellStyle = {
 var Footer = function (_a) {
     var onCellClick = _a.onCellClick, setDate = _a.setDate;
     var onLocalCellClick = function (event, itemPosition) {
-        setDate(moment.utc());
-        onCellClick(event, { value: itemPosition.toString() });
+        setDate(moment.utc(), function () {
+            onCellClick(event, { value: itemPosition.toString() });
+        });
     };
     return (React.createElement(Table.Footer, null,
         React.createElement(Table.Row, null,

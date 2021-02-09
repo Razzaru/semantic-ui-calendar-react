@@ -20,8 +20,9 @@ var emptySellStyle = {
 var Footer = function (_a) {
     var onCellClick = _a.onCellClick, setDate = _a.setDate;
     var onLocalCellClick = function (event, itemPosition) {
-        setDate(moment_1.default.utc());
-        onCellClick(event, { value: itemPosition.toString() });
+        setDate(moment_1.default.utc(), function () {
+            onCellClick(event, { value: itemPosition.toString() });
+        });
     };
     return (React.createElement(semantic_ui_react_1.Table.Footer, null,
         React.createElement(semantic_ui_react_1.Table.Row, null,
