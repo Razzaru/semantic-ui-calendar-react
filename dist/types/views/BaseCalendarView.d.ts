@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SemanticCOLORS } from 'semantic-ui-react';
+import { Moment } from "moment";
 export interface BaseCalendarViewProps {
     /** Used for passing calendar dom element to parent component. */
     onMount: (e: HTMLElement) => void;
@@ -25,6 +26,8 @@ export interface BaseCalendarViewProps {
     localization?: string;
     /** Should show footer */
     showFooter?: boolean;
+    /** Sets month and year */
+    setDate?: (date: Moment) => void;
 }
 export interface SingleSelectionCalendarViewProps {
     /** Position of a cell to display as active. */

@@ -43,6 +43,7 @@ class DayView extends BaseCalendarView<DayViewProps, any> {
       markColor,
       localization,
       showFooter,
+      setDate,
       ...rest
     } = this.props;
 
@@ -74,6 +75,7 @@ class DayView extends BaseCalendarView<DayViewProps, any> {
           showFooter && (
             <Footer
               onCellClick={onValueClick}
+              setDate={setDate}
             />
           )
         }

@@ -13,12 +13,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var semantic_ui_react_1 = require("semantic-ui-react");
 var FooterCell_1 = __importDefault(require("./FooterCell"));
+var moment_1 = __importDefault(require("moment"));
 var emptySellStyle = {
     borderTop: '1px solid rgba(34,36,38,.1)',
 };
 var Footer = function (_a) {
-    var onCellClick = _a.onCellClick;
+    var onCellClick = _a.onCellClick, setDate = _a.setDate;
     var onLocalCellClick = function (event, itemPosition) {
+        setDate(moment_1.default.utc());
         onCellClick(event, { value: itemPosition.toString() });
     };
     return (React.createElement(semantic_ui_react_1.Table.Footer, null,
