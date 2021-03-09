@@ -16,7 +16,11 @@ const FooterCell = ({ text, onClick }) => {
     <Table.Cell
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={event => onClick(event, text === 'Сегодня' ? currentDate.date() : currentDate.clone().add(1, 'day').date())}
+      onClick={event => {
+        const dateToPass = text === 'Сегодня' ? currentDate : currentDate.clone().add(1, 'day');
+
+        onClick(event, dateToPass)
+      }}
       style={cellStyle(hovered)}
       colSpan="3"
     >

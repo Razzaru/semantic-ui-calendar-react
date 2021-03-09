@@ -29,7 +29,10 @@ define(["require", "exports", "react", "semantic-ui-react", "moment"], function 
         var text = _a.text, onClick = _a.onClick;
         var _b = react_1.useState(false), hovered = _b[0], setHovered = _b[1];
         var currentDate = moment_1.default.utc().startOf('day');
-        return (react_1.default.createElement(semantic_ui_react_1.Table.Cell, { onMouseEnter: function () { return setHovered(true); }, onMouseLeave: function () { return setHovered(false); }, onClick: function (event) { return onClick(event, text === 'Сегодня' ? currentDate.date() : currentDate.clone().add(1, 'day').date()); }, style: cellStyle(hovered), colSpan: "3" }, text));
+        return (react_1.default.createElement(semantic_ui_react_1.Table.Cell, { onMouseEnter: function () { return setHovered(true); }, onMouseLeave: function () { return setHovered(false); }, onClick: function (event) {
+                var dateToPass = text === 'Сегодня' ? currentDate : currentDate.clone().add(1, 'day');
+                onClick(event, dateToPass);
+            }, style: cellStyle(hovered), colSpan: "3" }, text));
     };
     exports.default = FooterCell;
 });

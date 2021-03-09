@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { Table } from 'semantic-ui-react';
 import FooterCell from "./FooterCell";
-import moment from "moment";
 var emptySellStyle = {
     borderTop: '1px solid rgba(34,36,38,.1)',
 };
 var Footer = function (_a) {
     var onCellClick = _a.onCellClick, setDate = _a.setDate;
-    var onLocalCellClick = function (event, itemPosition) {
-        setDate(moment.utc(), function () {
-            onCellClick(event, { value: itemPosition.toString() });
+    var onLocalCellClick = function (event, date) {
+        setDate(date.clone().startOf('month'), function () {
+            onCellClick(event, { value: date.date().toString() });
         });
     };
     return (React.createElement(Table.Footer, null,

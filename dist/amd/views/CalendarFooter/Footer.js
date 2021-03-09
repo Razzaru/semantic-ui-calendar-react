@@ -8,20 +8,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-define(["require", "exports", "react", "semantic-ui-react", "./FooterCell", "moment"], function (require, exports, React, semantic_ui_react_1, FooterCell_1, moment_1) {
+define(["require", "exports", "react", "semantic-ui-react", "./FooterCell"], function (require, exports, React, semantic_ui_react_1, FooterCell_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     React = __importStar(React);
     FooterCell_1 = __importDefault(FooterCell_1);
-    moment_1 = __importDefault(moment_1);
     var emptySellStyle = {
         borderTop: '1px solid rgba(34,36,38,.1)',
     };
     var Footer = function (_a) {
         var onCellClick = _a.onCellClick, setDate = _a.setDate;
-        var onLocalCellClick = function (event, itemPosition) {
-            setDate(moment_1.default.utc(), function () {
-                onCellClick(event, { value: itemPosition.toString() });
+        var onLocalCellClick = function (event, date) {
+            setDate(date.clone().startOf('month'), function () {
+                onCellClick(event, { value: date.date().toString() });
             });
         };
         return (React.createElement(semantic_ui_react_1.Table.Footer, null,

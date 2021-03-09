@@ -252,6 +252,7 @@ class DateTimeFormInline extends React.Component<any, any> {
           onChange={this.handleChange}
           marked={[new Date()]}
           markColor='orange'
+          showFooter
         />
         <br />
         <TimeInput
